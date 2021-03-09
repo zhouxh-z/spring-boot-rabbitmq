@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: 101.37.16.136
+    virtual-host: /
+    template:
+      exchange: zhouxhExchange
+      default-receive-queue: zhouxhQueue
+      routing-key: zhouxh.#
+    listener:
+      direct:
+        acknowledge-mode: manual
+        retry:
+          enabled: false
+          max-attempts: 5
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 5

@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: 101.37.16.137,101.37.16.136
+    virtual-host: /
+    template:
+      exchange: zhouxhExchange
+      default-receive-queue: zhouxhQueue
+      routing-key: zhouxh.#
+
+server:
+  port: 8081
